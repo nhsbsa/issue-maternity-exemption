@@ -11,7 +11,7 @@ module.exports = router;
 // ********************************
 
 // ********************************
-// ISSUE
+// ISSUING
 // ********************************
 
 // Mother present?
@@ -113,7 +113,7 @@ router.post('/v1/issue-maternity-exemption-certificates/signed-in/mother-postal-
 })
 
 // ********************************
-// REGISTER
+// REGISTERING
 // ********************************
 
 // Have NHSMail address

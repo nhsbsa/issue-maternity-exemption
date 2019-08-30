@@ -49,10 +49,25 @@ Start page template - NHS.UK prototype kit
 
         <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
-                <p><strong>Mother's certificate number:</strong> 20 000 046 195</p>
-                <p><strong>Exemption ends:</strong> 30 March 2020</p>
-              </div>
+                <p><strong>Mother's certificate number:</strong>
+                <script>
+                var elevendigitsrandom = (Math.floor(10000000000 + Math.random() * 90000000000));
+                var result = "12345678910".replace(/^(.{2})(.{3})(.{3})(.*)$/, "$1 $2 $3 $4");
+                document.write(result);
+                </script></p>
+                <p><strong>Exemption ends:</strong>
+                <script>
+                  var dueDateOld = '{{ data['due-birth-date'] }}';
+                  dueDateNew = dueDateOld.substring(0, dueDateOld.length - 4); // "01/01/"
 
+                  var today = new Date();
+                  var yyyy = today.getFullYear() + 1;
+
+                  today = dueDateNew + yyyy;
+                  document.write(today);
+                </script>
+                </p>
+              </div>
 				
         <h2 class="nhsuk-heading-m">What happens next?</h2>
 

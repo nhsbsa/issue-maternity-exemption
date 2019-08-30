@@ -36,6 +36,12 @@ Start page template - NHS.UK prototype kit
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
+            {{ backLink({
+                "href": "javascript:history.go(-1)",
+                "text": "Go back"
+            }) }}
+    
+
         <span class="nhsuk-caption-l nhsuk-caption--top">Issue maternity exemption certificates</span>
         <h1 class="nhsuk-u-margin-bottom-5">
             Check your answers
@@ -290,7 +296,7 @@ Start page template - NHS.UK prototype kit
 
 
               <a href="result" class="nhsuk-button">
-                Submit application
+                Submit
             </a>
 
 
