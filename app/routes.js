@@ -222,7 +222,7 @@ router.post('/v1/issue-maternity-exemption-certificates/register/check-your-answ
   var userConfirmation = req.session.data['user-confirmation']
 
   if (userConfirmation){
-    res.redirect('/v1/issue-maternity-exemption-certificates/start')
+    res.redirect('/v1/issue-maternity-exemption-certificates/register/registration-complete')
   }
   else {
     res.redirect('/v1/issue-maternity-exemption-certificates/register/check-your-answers-error')
