@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+            {{ backLink({
+                "href": "javascript:history.go(-1)",
+                "text": "Go back"
+            }) }}
+
+        <h1>Registration outcomes</h1>
+
+        <ul>
+            <li><a href="result-verified">Email has been verified</a></li>
+            <li><a href="result">Verification link expired</a></li>
+            <li><a href="result">NHSmail already registered</a></li>
+            <li><a href="result">Information not matched in ESR</a></li>
+        </ul>  
+
+    </div>
+</div>
+
+
+{% endblock %}

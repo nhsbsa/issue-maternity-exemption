@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block header %}
+{{ header({
+    "service": {
+        "name": "Issue maternity exemption certificates",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+<style>
+@media (max-width: 40.0525em) {
+.nhsuk-breadcrumb__list {
+    display: block !important;
+}
+}
+</style>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list" style="text-align: right;">
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;">joe.bloggs@nhs.net</li>
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;"><a href="../ms-signed-out">Sign out</a></li>
+      </ol>
+    </div>
+  </nav>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+      }) }}
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Issue maternity exemption certificates</span>
+        <h1 class="nhsuk-u-margin-bottom-5">What you'll need</h1>
+
+        <p>You must be a midwife, practice nurse or health visitor registered with an NMC.</p>
+        <p>To issue maternity exemption certificates on behalf of new or expectant mothers, you'll need the mother's:</p>
+
+        <ul>
+            <li>date of birth</li>
+            <li>NHS number</li>
+            <li>due or birth date of their child</li>
+            <li>email or postal address</li>
+        </ul>
+
+        <p><a href="mother-present" class="nhsuk-button">Continue</a></p>
+
+
+    </div>
+
+</div>
+{% endblock %}

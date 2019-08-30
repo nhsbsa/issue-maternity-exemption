@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Issue maternity exemption certificates</span>
+        <h1 class="nhsuk-fieldset__legend--l">
+            What is your NHSmail address?
+        </h1>
+
+        <form action="/v1/issue-maternity-exemption-certificates/register/nhs-mail-address" method="post">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+
+                        <div class="nhsuk-form-group">
+                            <span class="nhsuk-hint" id="example-hint">
+                                We'll use this to send you a verification email. Your NHSmail address should end in @nhs.net.
+                            </span>
+                                <label class="nhsuk-label" for="nhs-mail-address">
+                                    NHSMail address
+                                </label>
+                                <input class="nhsuk-input nhsuk-input--width-10" id="nhs-mail-address" name="nhs-mail-address"
+                                    type="text">
+                            </div>
+
+                </fieldset>
+
+
+
+            </div>
+
+            <button class="nhsuk-button" type="submit">
+                Continue
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

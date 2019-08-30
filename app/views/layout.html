@@ -22,7 +22,7 @@
 {% block header %}
   {{ header({
     "service": {
-        "name": "Prototype kit",
+        "name": "Issue maternity exemption certificates",
         "href": "/"
       },
       "showNav": "false",
@@ -34,15 +34,19 @@
 <!-- Footer goes inside the footer block -->
 <!-- More info and code for the footer can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/footer -->
 {% block footer %}
-  {{ footer({
+{{ footer({
     "links": [
       {
-        "URL": "/",
-        "label": "Home"
+        "URL": "https://www.nhsbsa.nhs.uk/check-what-help-you-could-get-pay-nhs-costs-privacy-notice",
+        "label": "Privacy"
       },
       {
-        "URL": "/page-example",
-        "label": "Example page"
+        "URL": "https://www.nhsbsa.nhs.uk/our-policies/cookies",
+        "label": "Cookies"
+      },
+      {
+        "URL": "https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions",
+        "label": "Terms and conditions"
       }
     ]
   })}}

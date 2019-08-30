@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block header %}
+{{ header({
+    "service": {
+        "name": "Issue maternity exemption certificates",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+<style>
+@media (max-width: 40.0525em) {
+.nhsuk-breadcrumb__list {
+    display: block !important;
+}
+}
+</style>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list" style="text-align: right;">
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;">joe.bloggs@nhs.net</li>
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;"><a href="../ms-signed-out">Sign out</a></li>
+      </ol>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Issue maternity exemption certificates</span>
+        <h1 class="nhsuk-fieldset__legend--l">
+            Is the mother present?
+        </h1>
+
+        <form action="/v1/issue-maternity-exemption-certificates/signed-in/mother-present" method="post">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+
+                    <div class="nhsuk-radios nhsuk-radios--inline">
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="yes" name="mother-present" type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="no" name="mother-present" type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="no">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+
+            </div>
+
+            <button class="nhsuk-button" type="submit">
+                Continue
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

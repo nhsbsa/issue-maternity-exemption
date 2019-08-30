@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block header %}
+{{ header({
+    "service": {
+        "name": "Issue maternity exemption certificates",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+<style>
+@media (max-width: 40.0525em) {
+.nhsuk-breadcrumb__list {
+    display: block !important;
+}
+}
+</style>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list" style="text-align: right;">
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;">joe.bloggs@nhs.net</li>
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;"><a href="../ms-signed-out">Sign out</a></li>
+      </ol>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-panel nhsuk-u-margin-bottom-5" style="background: #005EB8; margin-top: 0;">
+
+            <h1 class="nhsuk-panel__title" style="color: white;">
+                    Done
+            </h1>
+            
+            <span class="nhsuk-caption-xl nhsuk-caption--top" style="text-align: center; color: white;">You have completed the application</span>
+
+        </div>
+
+        <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p><strong>Mother's certificate number:</strong> 20 000 046 195</p>
+                <p><strong>Exemption ends:</strong> 30 March 2020</p>
+              </div>
+
+				
+        <h2 class="nhsuk-heading-m">What happens next?</h2>
+
+        {% if data['mother-exemption-method'] == "email" %}
+        <p>We'll email these details to the mother. She can start using her exemption straight away.</p>
+        {% endif %}
+
+        {% if data['mother-exemption-method'] == "post" %}
+        <p>The mother should receive her exemption details in the post in 7-10 working days. She can start using her exemption straight away.</p>
+        {% endif %}
+
+
+
+        <h3 class="nhsuk-heading-s">Ongoing feedback from mothers</h3>
+
+        <p>If the mother is happy to take part in further research, <a href="https://www.snapsurveys.com/wh/s.asp?k=150212725926">send us a contact number (link opens in a new window)</a>.</p>
+
+        <a href="mother-present" class="nhsuk-button">
+            Start a new application
+        </a>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

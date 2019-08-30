@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+            {{ backLink({
+                "href": "javascript:history.go(-1)",
+                "text": "Go back"
+            }) }}
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Issue maternity exemption certificates</span>
+        <h1 class="nhsuk-u-margin-bottom-5">
+            Check your answers
+        </h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Last name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['users-last-name'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="register#users-last-name">
+                        Change<span class="nhsuk-u-visually-hidden"> your last name</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    NMC pin
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['users-nmc-pin'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="mother-email-address#mothers-email-address">
+                        Change<span class="nhsuk-u-visually-hidden"> your NMC pin</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Date of birth
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['users-dob-day'] }} / {{ data['users-dob-month'] }} / {{ data['users-dob-year'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="about-mother#mothers-date-of-birth">
+                        Change<span class="nhsuk-u-visually-hidden"> your date of birth</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+        </dl>
+
+        <div class="nhsuk-warning-callout">
+                <h3 class="nhsuk-warning-callout__label">Declaration</h3>
+                <p>I understand that:</p>
+            <ul>
+                <li>the information submitted will be checked by ESR</li>
+                <li>my NMC PIN will be recorded against my NHSmail account</li>
+            </ul>
+        </div>
+
+        <form action="/v1/issue-maternity-exemption-certificates/register/check-your-answers" method="post">
+        
+        <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset" aria-describedby="user-confirmation">
+              
+                  <div class="nhsuk-checkboxes">
+              
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="user-confirmation" name="user-confirmation" type="checkbox" value="email">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="user-confirmation">
+                        I confirm that the information provided is correct
+                      </label>
+                    </div>
+                            
+                  </div>
+                </fieldset>
+              
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+            Confirm
+        </button>
+
+        </form>
+
+
+    </div>
+</div>
+{% endblock %}

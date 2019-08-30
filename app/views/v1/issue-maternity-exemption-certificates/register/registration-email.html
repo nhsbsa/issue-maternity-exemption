@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<style>
+.email-message {
+    border: 1px solid #bfc1c3;
+    border-top: 5px solid #005EA5;
+    background: white;
+}
+.email-message-details {
+    margin: 0;
+}
+
+.email-message-body {
+    padding: 24px 16px;
+}
+@media (min-width: 40.0625em) {
+.email-message-body {
+    padding: 32px 24px;
+}
+}
+th, td{
+    padding: 16px;
+}
+@media (min-width: 40.0625em) {
+th, td {
+    padding: 24px;
+}
+}
+</style>
+<div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+                {{ backLink({
+                    "href": "javascript:history.go(-1)",
+                    "text": "Go back"
+                }) }}
+
+                <h1>Registration email</h1>
+
+                <div class="email-message">
+                    <table class="email-message-details">
+                        <tbody>
+                            <tr>
+                                <th>From:</th>
+                                <td>NHS Issue maternity exemption certificates service</td>
+                            </tr>
+                            <tr>
+                                <th>To:</th>
+                                <td><a href="mailto:{{ data['nhs-mail-address'] }}">{{ data['nhs-mail-address'] }}</a></td>
+                            </tr>
+                
+                            <tr class="email-message-meta">
+                                <th>Subject:</th>
+                                <td>NHS Issue maternity exemption certificates – please verify your email address</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="email-message-body">
+                        <h1 class="nhsuk-heading-s">NHS – Issue maternity exemption certificates</h1>
+                        <p>You’re receiving this email as you have recently tried to register for our Issue maternity exemption certificates service.</p>
+                        <hr class="nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+                        <p>To continue your registration, click on the following link:</p>
+                        <p><a href="#">https://services.nhsbsa.nhs.uk/issue-maternity-exemption-certificates/register/JHGasd7&!alRT</a></p>
+                        <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+                            <span class="nhsuk-u-visually-hidden">Information: </span>
+                            <p>This verification link will expire in 24 hours.</p>
+                        </div>
+                        <hr class="nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+                        <p>Once your email address is confirmed, we’ll need a few more details from you to verify your professional identity.</p>
+                        <p>If you have any problems accessing the service or need help, email <a href="mailto:nhsbsa.healthcosts@nhs.net">nhsbsa.healthcosts@nhs.net</a></p>
+                        <p>If you have not recently tried to register for this service, please ignore this email.</p>
+                    </div>
+                </div>
+
+                <div style="background-color:#dee0e2; padding:40px; margin-top: 50px;">
+                        <h3 class="nhsuk-heading-xs">PROTOTYPE ONLY</h3>
+                        <p class="nhsuk-u-margin-bottom-0"><a href="registration-outcomes">Click here</a> to view different registration outcomes.</p>
+                </div>
+                
+
+        </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <div class="nhsuk-panel nhsuk-u-margin-bottom-5" style="background: #005EB8; margin-top: 0;">
+    
+                <h1 class="nhsuk-panel__title" style="color: white;">
+                    Your NHSmail address has been verified
+                </h1>
+                <!--
+                                  <div class="nhsuk-panel__body">
+                                    Your reference number<br><strong>HDJ2123F</strong>
+                                  </div>
+                                  -->
+            </div>
+
+            <p>We have verified <strong>{{ data['nhs-mail-address'] }}</strong>.</p>
+
+            <h2 class="nhsuk-heading-m">What happens next</h2>
+
+            <p>To help us verify your professional identity, we need you to tell us your:</p>
+
+            <ul>
+                <li>last name</li>
+                <li>NMC PIN</li>
+                <li>date of birth</li>
+            </ul>
+            
+            <p><a href="register" class="nhsuk-button">Continue</a></p>
+    
+
+
+    </div>
+</div>
+
+{% endblock %}

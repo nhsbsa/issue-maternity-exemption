@@ -1,0 +1,266 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block header %}
+{{ header({
+    "service": {
+        "name": "Issue maternity exemption certificates",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+<style>
+@media (max-width: 40.0525em) {
+.nhsuk-breadcrumb__list {
+    display: block !important;
+}
+}
+</style>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list" style="text-align: right;">
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;">joe.bloggs@nhs.net</li>
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;"><a href="../ms-signed-out">Sign out</a></li>
+      </ol>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Issue maternity exemption certificates</span>
+        <h1 class="nhsuk-u-margin-bottom-5">
+            Check your answers
+        </h1>
+
+        <dl class="nhsuk-summary-list">
+
+                {% if data['date-met-with-mother'] %}
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Date you met the mother
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        {{ data['date-met-with-mother'] }}
+                    </dd>
+    
+                    <dd class="nhsuk-summary-list__actions">
+    
+                        <a href="date-met-with-mother#date-met-with-mother">
+                            Change<span class="nhsuk-u-visually-hidden"> date you met the mother</span>
+                        </a>
+    
+                    </dd>
+    
+                </div>
+                {% endif %}
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Mother's name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['mothers-first-name'] }} {{ data['mothers-last-name'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="about-mother#mothers-first-name">
+                        Change<span class="nhsuk-u-visually-hidden"> mother's name</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            {% if data['mother-exemption-method'] == "email" %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Mother's email address
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['mothers-email-address'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="mother-email-address#mothers-email-address">
+                        Change<span class="nhsuk-u-visually-hidden"> mother's email address</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            {% endif %}
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Mother's date of birth
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                        {{ data['mothers-date-of-birth'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="about-mother#mothers-date-of-birth">
+                        Change<span class="nhsuk-u-visually-hidden"> mother's date of birth</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Mother's NHS number
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        {{ data['mothers-NHS-number'] }}
+                    </dd>
+    
+                    <dd class="nhsuk-summary-list__actions">
+    
+                        <a href="about-mother#mothers-NHS-number">
+                            Change<span class="nhsuk-u-visually-hidden"> mother's NHS number</span>
+                        </a>
+    
+                    </dd>
+    
+                </div>
+
+            {% if data['mother-exemption-method'] == "email" %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Mother's postcode
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                        {{ data['mothers-postcode'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="about-mother#mothers-postcode">
+                        Change<span class="nhsuk-u-visually-hidden"> mother's postcode</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            {% endif %}
+
+            {% if data['mother-exemption-method'] == "post" %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Mother's postal address
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['mothers-building-name'] }}<br>
+                    {{ data['mothers-street-name'] }}<br>
+                    {{ data['mothers-town-city'] }}<br>
+                    {{ data['mothers-postal-postcode'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="about-mother#mothers-building-name">
+                        Change<span class="nhsuk-u-visually-hidden"> mothers postal address</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            {% endif %}
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Due date or baby's birth date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                        {{ data['due-birth-date'] }}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="about-mother#due-birth-date">
+                        Change<span class="nhsuk-u-visually-hidden"> due or birth date</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            {% if data['mother-exemption-method'] == "email" %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Get details by email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Yes
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="mother-exemption-method">
+                        Change<span class="nhsuk-u-visually-hidden"> get details by email</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            {% endif %}
+
+            {% if data['mother-exemption-method'] == "post" %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Get details by post
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Yes
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="mother-exemption-method">
+                        Change<span class="nhsuk-u-visually-hidden"> get details by post</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            {% endif %}
+
+        </dl>
+
+        <div class="nhsuk-warning-callout">
+                <h3 class="nhsuk-warning-callout__label">Declaration</h3>
+                <p>I confirm that this information is correct and true in accordance with the applicant’s records on 29 August 2019.</p>
+                <p>I confirm that the applicant:</p>
+              <ul>
+                <li>has given her permission for this application to be submitted on her behalf</li>
+                <li>knows the information submitted will be used by the NHS Business Services Authority and shared other organisations working on their behalf where necessary</li>
+                <li>understands her data will not be transferred outside of the European Economic Area and will be deleted within 24 months of the expiry date of the exemption</li>
+                <li>is aware that this is a pilot scheme she is taking part in</li>
+                <li>consents to her data being used to evaluate the digital pilot scheme</li>
+              </ul>
+              <p>I understand that when I press submit, I am submitting an application on behalf of the named person.</p>
+              
+        </div>
+
+
+              <a href="result" class="nhsuk-button">
+                Submit application
+            </a>
+
+
+    </div>
+</div>
+{% endblock %}

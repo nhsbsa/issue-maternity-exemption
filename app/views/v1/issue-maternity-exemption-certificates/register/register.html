@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Issue maternity exemption certificates</span>
+        <h1 class="nhsuk-fieldset__legend--l">
+            Your details
+        </h1>
+
+        <form action="/v1/issue-maternity-exemption-certificates/register/register" method="post">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="users-last-name">
+                            Last name
+                        </label>
+                        <span class="nhsuk-hint" id="input-with-hint-text-hint">
+                            <p>This should match your NMC registration</p>
+                        </span>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="users-last-name" name="users-last-name"
+                            type="text">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="users-nmc-pin">
+                            NMC Pin
+                        </label>
+                        <span class="nhsuk-hint" id="input-with-hint-text-hint">
+                            <p>For example, 99A9999A</p>
+                        </span>
+                        <input class="nhsuk-input nhsuk-input--width-10" id="users-nmc-pin" name="users-nmc-pin"
+                            type="text">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+
+                        <label class="nhsuk-label" for="dob">
+                            Date of birth
+                        </label>
+
+                        <span class="nhsuk-hint" id="dob-hint">
+                            For example, 31 3 1980
+                        </span>
+
+                        <div class="nhsuk-date-input" id="dob">
+                            <div class="nhsuk-date-input__item">
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label nhsuk-date-input__label" for="users-dob-day">
+                                        Day
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                        id="users-dob-day" name="users-dob-day" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                            <div class="nhsuk-date-input__item">
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label nhsuk-date-input__label" for="users-dob-month">
+                                        Month
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                        id="users-dob-month" name="users-dob-month" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                            <div class="nhsuk-date-input__item">
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label nhsuk-date-input__label" for="users-dob-year">
+                                        Year
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                        id="users-dob-year" name="users-dob-year" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </fieldset>
+
+
+
+            </div>
+
+            <button class="nhsuk-button" type="submit">
+                Continue
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
