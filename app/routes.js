@@ -112,6 +112,24 @@ router.post('/v1/issue-maternity-exemption-certificates/signed-in/mother-postal-
   
 })
 
+// Capture NHSMail address (Login)
+router.post('/v1/issue-maternity-exemption-certificates/nhs-login', function (req, res) {
+
+  var nhsLogin = req.session.data['nhs-mail-address']
+
+  if (nhsLogin === ""){
+    req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
+    res.redirect('/v1/issue-maternity-exemption-certificates/signed-in/start')
+  }
+  else if (nhsLogin) {
+    res.redirect('/v1/issue-maternity-exemption-certificates/signed-in/start')
+  }
+  else {
+    res.redirect('/v1/issue-maternity-exemption-certificates/signed-in/start')
+  }
+  
+})
+
 // ********************************
 // REGISTERING
 // ********************************
@@ -226,6 +244,24 @@ router.post('/v1/issue-maternity-exemption-certificates/register/check-your-answ
   }
   else {
     res.redirect('/v1/issue-maternity-exemption-certificates/register/check-your-answers-error')
+  }
+
+})
+
+// Capture NHSMail address (Register)
+router.post('/v1/issue-maternity-exemption-certificates/register-nhs-login', function (req, res) {
+
+  var nhsLogin = req.session.data['nhs-mail-address']
+
+  if (nhsLogin === ""){
+    req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
+    res.redirect('/v1/issue-maternity-exemption-certificates/signed-in/start')
+  }
+  else if (nhsLogin) {
+    res.redirect('/v1/issue-maternity-exemption-certificates/signed-in/start')
+  }
+  else {
+    res.redirect('/v1/issue-maternity-exemption-certificates/signed-in/start')
   }
 
 })
