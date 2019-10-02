@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block header %}
+{{ header({
+    "service": {
+        "name": "Issue maternity exemption certificates",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+<style>
+@media (max-width: 40.0525em) {
+.nhsuk-breadcrumb__list {
+    display: block !important;
+}
+}
+</style>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list" style="text-align: right;">
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;">{{ data['nhs-mail-address'] }}</li>
+        <li style="font-weight: 400; font-size: 14px; font-size: 1rem; line-height: 1.5; display: inline-block; margin-bottom: 0; padding-left: 3px; padding-right: 27px;"><a href="../ms-signed-out">Sign out</a></li>
+      </ol>
+    </div>
+  </nav>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+    
+                <h1>
+                        Issue maternity exemption certificates
+                    </h1>
+                    
+        </div>
+    </div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <p class="nhsuk-caption-l nhsuk-u-margin-bottom-5">
+            This service allows midwives, practice nurses or health visitors to issue maternity exemption certificates on behalf of new or expectant mothers.
+        </p>
+
+        <h2 class="nhsuk-heading-s">A maternity exemption certificate entitles the mother to free prescriptions:</h2>
+
+        <ul>
+            <li>while pregnant</li>
+            <li>12 months after giving birth</li>
+        </ul>
+
+        <p><a href="what-you-need" class="nhsuk-button nhsuk-u-margin-top-5">Start now</a></p>
+
+    </div>
+
+    <aside class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-related-nav">
+              <h2 class="nhsuk-related-nav__heading">
+                Help for healthcare professionals
+              </h2>
+              <nav role="navigation" class="nhsuk-related-nav__nav-section">
+                <ul class="nhsuk-related-nav__list">
+                  
+                    
+                      <li class="nhsuk-related-nav__item">
+                        <a class="nhsuk-related-nav__link" href="help">
+                          Common issues                          
+                        </a>
+                      </li>
+                    
+                  
+                  
+                </ul>
+              </nav>
+            </div>
+          </aside>
+
+</div>
+{% endblock %}

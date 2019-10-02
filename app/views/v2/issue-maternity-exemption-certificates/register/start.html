@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+            <h1>
+                Register to issue maternity exemption certificates
+                </h1>
+                
+    </div>
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <p class="nhsuk-caption-l nhsuk-u-margin-bottom-5">
+            Use this service to register to issue maternity exemption certificates on behalf of new or expectant mothers.
+        </p>
+
+        <p>You must be a midwife, practice nurse or health visitor registered with the NMC to create an account.</p>
+
+        <h2 class="nhsuk-heading-s">What you'll need</h2>
+
+        <p>To help us verify your professional identity, we'll ask for your:</p>
+
+        <ul>
+            <li>last name</li>
+            <li>date of birth</li>
+            <li>NMC PIN</li>
+            <li>NHSmail address and password</li>
+        </ul>
+
+        <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p><strong>Registration takes less than 5 minutes.</strong></p>
+        </div>
+        <p><a href="nhs-mail-address" class="nhsuk-button nhsuk-u-margin-bottom-4">Start now</a></p>
+
+        <details class="nhsuk-details nhsuk-u-margin-bottom-3">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    Already registered?
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>If you're already registered select <strong>Issue certificate</strong> to begin.</p>
+                <p><a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" href="../start">Issue certificate</a></p>
+            </div>
+        </details>
+
+        <details class="nhsuk-details nhsuk-u-margin-bottom-3">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    I do not have an NHSmail account
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>If you're working in a Trust or organisation that uses NHSmail, you can contact your local administrator or IT helpdesk to set up an account.</p>
+                <p><a target="_blank" href="https://portal.nhs.net/Help/joiningnhsmail">Read more about how to join NHSmail.</a></p>
+            </div>
+        </details>
+
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    I'm a GP with a GMC reference number
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>You can still register to use this service.</p>
+                <p>To register, email <a target="_blank" href="mailto:nhsbsa.healthcosts@nhs.net">nhsbsa.healthcosts@nhs.net</a> and include your:</p>
+                <ul>
+                    <li>name</li>
+                    <li>GMC reference number</li>
+                    <li>NHSmail address</li>
+                </ul>
+                <p>Once we’ve received this information, we’ll email you to confirm you are registered. You will then be able to use the online service.</p>
+            </div>
+        </details>
+
+
+    </div>
+
+    <aside class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-related-nav">
+              <h2 class="nhsuk-related-nav__heading">
+                Help for healthcare professionals
+              </h2>
+              <nav role="navigation" class="nhsuk-related-nav__nav-section">
+                <ul class="nhsuk-related-nav__list">
+                  
+                    
+                      <li class="nhsuk-related-nav__item">
+                        <a class="nhsuk-related-nav__link" href="help">
+                          Common issues
+                        </a>
+                      </li>
+                    
+                  
+                  
+                </ul>
+              </nav>
+            </div>
+          </aside>
+
+</div>
+{% endblock %}

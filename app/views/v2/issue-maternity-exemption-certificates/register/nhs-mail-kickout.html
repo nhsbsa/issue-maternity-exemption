@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-u-margin-bottom-5">
+            Registering for an NHSmail account
+        </h1>
+
+        <p class="nhsuk-caption-l nhsuk-u-margin-bottom-5">
+                If you are an individual member of staff working in a Trust or other organisation that already uses NHSmail and you wish to register an account, you should contact your local administrator or IT helpdesk.
+            </p>
+
+        <p><a target="_blank" href="https://support.nhs.net/knowledge-base/registering-for-an-nhsmail-account/">Read more about how to join NHSmail</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

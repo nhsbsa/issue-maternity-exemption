@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Register to issue maternity exemption certificates</span>
+        <h1 class="nhsuk-u-margin-bottom-5">What happens next</h1>
+
+        <p>To complete your registration, you now need to:</p>
+
+        <ul>
+            <li>Sign in to your NHSmail account</li>
+            <li>Select <strong>Accept</strong> when asked to review your permissions</li>
+        </ul>
+
+        <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                        Why do you need my permission?
+                    </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <p>We use Microsoft to link your @nhs.net email address to our services. We need your permission to do this.</p>
+                    <p>If you select <strong>Cancel</strong> when asked to review permission we will not be able to complete your registration.</p>
+                </div>
+        </details>
+
+        <p><a href="../register-nhs-login" class="nhsuk-button nhsuk-u-margin-bottom-4">Sign in</a></p>
+
+    </div>
+
+</div>
+{% endblock %}

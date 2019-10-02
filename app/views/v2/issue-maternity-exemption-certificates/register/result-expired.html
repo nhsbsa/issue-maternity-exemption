@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <div class="nhsuk-panel nhsuk-u-margin-bottom-5" style="background: #005EB8; margin-top: 0;">
+    
+                <h1 class="nhsuk-panel__title" style="color: white;">
+                    Your verification link has expired
+                </h1>
+                <!--
+                                  <div class="nhsuk-panel__body">
+                                    Your reference number<br><strong>HDJ2123F</strong>
+                                  </div>
+                                  -->
+            </div>
+
+            <div class="nhsuk-inset-text">
+                    <span class="nhsuk-u-visually-hidden">Information: </span>
+                    <p class="nhsuk-heading-s">We have not been able to verify your NHSmail account.</p>
+                  </div>
+
+            <h2 class="nhsuk-heading-m">What happens next</h2>
+
+            <p>If you would like to continue with your registeration, please request a new verification link.</p>
+            
+            <p><a href="email-confirmation-sent">Request new verification link</a></p>
+    
+
+
+    </div>
+</div>
+
+{% endblock %}

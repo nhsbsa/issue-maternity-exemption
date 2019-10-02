@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <span class="nhsuk-caption-l nhsuk-caption--top">Register to issue maternity exemption certificates</span>
+        <h1 class="nhsuk-u-margin-bottom-5">Check your email</h1>
+
+        <p>To confirm your account, we have sent an email with a verification link to <strong>{{ data['nhs-mail-address'] }}</strong>.</p>
+
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+
+        <p>Check your NHSmail and follow the verification link to continue with your registration.</p>
+
+        <p>The verification email will expire within 24 hours.</p>
+
+        <details class="nhsuk-details nhsuk-u-margin-bottom-3">
+                <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                        I have not received the email
+                    </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <ul>
+                        <li>Allow 5-10 minutes for this message to arrive</li>
+                        <li>Check your junk or spam folder. If the email is not there you can <a href="email-confirmation-resent">resend the verification email</a>.</li>
+                    </ul>    
+                </div>
+        </details>
+        <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                        My NHSmail address is incorrect
+                    </span>
+                </summary>
+                <div class="nhsuk-details__text">
+
+                        <form action="/v2/issue-maternity-exemption-certificates/register/email-confirmation-sent" method="post">
+
+                            <div class="nhsuk-form-group">
+                
+                                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                
+                                        <div class="nhsuk-form-group">
+                                        <p>If your NHSMail address is incorrect, please enter a new one and a new confirmation email will be sent.</p>
+                                                <label class="nhsuk-label" for="nhs-mail-address">
+                                                    NHSMail address
+                                                </label>
+                                                <input class="nhsuk-input nhsuk-input--width-10" id="nhs-mail-address" name="nhs-mail-address"
+                                                    type="text">
+                                            </div>
+                
+                                </fieldset>
+                
+                
+                
+                            </div>
+                
+                            <button class="nhsuk-button" type="submit">
+                                Continue
+                            </button>
+                
+                        </form>
+                </div>
+        </details>
+
+        <div style="background-color:#dee0e2; padding:40px; margin-top: 50px;">
+                <h3 class="nhsuk-heading-xs">PROTOTYPE ONLY</h3>
+                <p class="nhsuk-u-margin-bottom-0"><a href="registration-email">Click here</a> to view registration email.</p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <div class="nhsuk-panel nhsuk-u-margin-bottom-5" style="background: #005EB8; margin-top: 0;">
+    
+                <h1 class="nhsuk-panel__title" style="color: white;">
+                        Your NHSmail address is already registered
+                </h1>
+                <!--
+                                  <div class="nhsuk-panel__body">
+                                    Your reference number<br><strong>HDJ2123F</strong>
+                                  </div>
+                                  -->
+            </div>
+
+            <p><strong>{{ data['nhs-mail-address'] }}</strong> is already registered.</p>
+
+            <h2 class="nhsuk-heading-m">What happens next</h2>
+
+            <p>To begin issuing maternity exemption certificates, click <strong>'Sign in'</strong> and enter your NHSmail address and password.</p>
+            <p>If you have any difficulty accessing the service, please email <a href="mailto:nhsbsa.healthcosts@nhs.net">nhsbsa.healthcosts@nhs.net</a></p>
+            
+            <p><a href="../ms-login" class="nhsuk-button">Sign in</a></p>
+
+    
+
+
+    </div>
+</div>
+
+{% endblock %}
